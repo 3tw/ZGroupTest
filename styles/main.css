@@ -1,0 +1,69 @@
+@font-face {
+  font-family: "Gotham-Bold";
+  src: url("../../assets/fonts/Gotham-Bold.otf") format("otf");
+}
+@font-face {
+  font-family: "Gotham-Book";
+  src: url("../../assets/fonts/Gotham-Book.otf") format("otf");
+}
+@font-face {
+  font-family: "Gotham-Medium";
+  src: url("../../assets/fonts/Gotham-Medium.otf") format("otf");
+}
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  background-color: #ffffff;
+  font-family: "Gotham-Book";
+  font-size: 16px;
+  line-height: 1.19rem;
+  color: #002A00;
+}
+
+h1 {
+  font-family: "Gotham-Bold";
+  font-size: 2.19rem;
+  line-height: 2.6rem;
+  color: #002A00;
+}
+
+h2 {
+  font-family: "Gotham-Book";
+  font-size: 1rem;
+  line-height: 1.19rem;
+  color: #828282;
+}
+
+h3,
+.box-text {
+  font-family: "Gotham-Medium";
+  font-size: 0.88rem;
+  line-height: 1.06rem;
+  color: #ffffff;
+  background-color: #707070;
+}
+
+h1, h2, h3 {
+  text-transform: uppercase;
+}
+
+.l-gray {
+  color: #828282;
+}
+
+@media screen and (min-width: 720px) {
+  h1 {
+    font-size: 8rem;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
