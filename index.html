@@ -9,7 +9,6 @@
 </head>
 
 <body>
-
 	<header>
 		<div id="navbar">
 			<!--Logo and hamburger icon-->
@@ -21,7 +20,7 @@
 			</div>
 			<!--Menu content-->
 			<div id="menu">
-				<a id="close-button">&times;</a>
+				<a class="close-button">&times;</a>
 
 				<ul class="menu-content">
 					<li><a href="javascript:void(0);" class="menu-button">STORITVE IN REŠITVE</a></li>
@@ -57,46 +56,46 @@
 			</div>
 		</div>
 	</header>
-	
+	<!--Main content-->
 	<div id="content-grid">
 		<section id="main-image" class="image-wrap">
 			<div class="image-container image-grid">
-				<img 
-					src="../assets/images/main-m.jpg" 
-					srcset="../assets/images/main-m.jpg 680w,
-					../assets/images/main-d.jpg 760w"
-					sizes="100vw"
-					alt="Main image">
+				<img src="../assets/images/main-m.jpg" 
+				srcset="../assets/images/main-m.jpg 680w,
+					../assets/images/main-d.jpg 760w" 
+					sizes="100vw" alt="Main image">
 			</div>
 		</section>
-		
-		<section id="main-text" class="content-wrap">
+
+		<section id="main-section" class="content-wrap">
 			<h2>HIBRIDNI IT / OMREŽJE WIFI KOT STORITEV</h2>
-			<h1>LJUBLJANSKI DVOR 
-				<br>OMREŽJE LAHKO SE 
+			<h1>LJUBLJANSKI DVOR
+				<br>OMREŽJE LAHKO SE
 				<br>TUKAJ
 			</h1>
 			<p>
 				Upravljanje in načrtovanje omrežij od žičnih do WIFI, pri čemer poskrbimo za celoten cikel upravljanja.
 			</p>
-			<button class="read-more l-gray">
+			<button class="read-more l-gray gotham-book">
 				Preberi več
 			</button>
 		</section>
-		
-		<section id="box-text" class="content-wrap">
-			<span class="box-text">
-				<h3>LJUBLJANSKI DVOR</h3>
-				<p>
-					Upravljanje in načrtovanje omrežij od žičnih do WIFI, pri čemer poskrbimo za celoten cikel upravljanja.
-				</p> 
-			</span>
-			<button class="read-more">
-				Preberi več
-			</button>
+
+		<section class="info-container content-wrap">
+			<div class="box">
+				<span class=box-text>
+					<h3>LJUBLJANSKI DVOR</h3>
+					<p>
+						Upravljanje in načrtovanje omrežij od žičnih do WIFI, pri čemer poskrbimo za celoten cikel
+						upravljanja.
+					</p>
+				</span>
+				<button class="read-more white gotham-medium">
+					Preberi več
+				</button>
+			</div>
 		</section>
 	</div>
-
 
 	<!-- js -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

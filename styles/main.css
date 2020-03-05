@@ -1,14 +1,14 @@
 @font-face {
   font-family: "Gotham-Bold";
-  src: url("../../assets/fonts/Gotham-Bold.otf") format("otf");
+  src: url("../../assets/fonts/Gotham-Bold.otf");
 }
 @font-face {
   font-family: "Gotham-Book";
-  src: url("../../assets/fonts/Gotham-Book.otf") format("otf");
+  src: url("../../assets/fonts/Gotham-Book.otf");
 }
 @font-face {
   font-family: "Gotham-Medium";
-  src: url("../../assets/fonts/Gotham-Medium.otf") format("otf");
+  src: url("../../assets/fonts/Gotham-Medium.otf");
 }
 * {
   box-sizing: border-box;
@@ -46,18 +46,81 @@ h2 {
 h3,
 .box-text {
   font-family: "Gotham-Medium";
-  font-size: 0.88rem;
-  line-height: 1.06rem;
+  font-size: 0.9rem;
+  font-weight: normal;
+  line-height: 1.1rem;
   color: #ffffff;
   background-color: #707070;
 }
 
 h1, h2, h3 {
   text-transform: uppercase;
+  font-weight: normal;
+}
+
+.gotham-bold {
+  font-family: "Gotham-Bold";
+  font-weight: normal;
+}
+
+.gotham-book {
+  font-family: "Gotham-Book";
+  font-weight: normal;
+}
+
+.gotham-medium {
+  font-family: "Gotham-Medium";
+  font-weight: normal;
 }
 
 .l-gray {
   color: #828282;
+}
+
+.white {
+  color: #ffffff;
+}
+
+.content-wrap {
+  padding: 1rem 1.875rem 1rem 1.875rem;
+}
+
+.image-container,
+.image-container > img {
+  width: 100%;
+}
+
+.box {
+  padding: 0.5rem;
+  background-color: #707070;
+}
+
+.read-more {
+  text-decoration: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  text-transform: uppercase;
+  background-color: inherit;
+  font-size: inherit;
+}
+
+#navbar {
+  height: 4.4rem;
+  display: flex;
+  justify-items: spread-between;
+}
+
+#menu {
+  display: none;
+}
+
+.menu-content {
+  display: none;
+}
+
+.contact-info {
+  display: none;
 }
 
 @media screen and (min-width: 720px) {
