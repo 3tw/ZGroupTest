@@ -248,4 +248,66 @@ ul {
   padding: 0;
 }
 
+.menu-content a {
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  text-decoration: none;
+  color: #002A00;
+  text-transform: uppercase;
+}
+
+.level-2 a {
+  font-size: 1rem;
+  line-height: 1.19rem;
+  text-transform: capitalize;
+}
+
+.menu-content > li {
+  padding-top: 1.5rem;
+}
+
+.level-1 > li {
+  padding-top: 0.8rem;
+}
+
+.level-2 > li {
+  padding-top: 0.4rem;
+}
+
+.level-1 {
+  overflow: hidden;
+  display: none;
+  margin: 1rem;
+  border-top: 1px solid #828282;
+  border-bottom: 1px solid #828282;
+}
+.level-1.show {
+  /*display: block;*/
+}
+
+.level-2 {
+  overflow: hidden;
+  display: none;
+  margin: 1rem;
+}
+.level-2.show {
+  /*display: block;*/
+}
+
+.level-1:last-child {
+  padding-bottom: 0.8rem;
+}
+
+.level-2:last-child {
+  padding-bottom: 0.4rem;
+}
+
+a.toggle {
+  display: block;
+  transition: 0.3s ease;
+}
+a.toggle:hover {
+  color: #707070;
+}
+
 /*# sourceMappingURL=main.css.map */

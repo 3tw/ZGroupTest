@@ -13,7 +13,24 @@ $(document).ready(function () {
 		$("#menu").slideUp(500)
 
 
-    };
+	};
+	
+	// expand items
+	$(".toggle").click(function(e) {
+		e.preventDefault();
+
+
+      if ($(this).next().hasClass("show")) {
+          $(this).next().removeClass("show");
+          $(this).next().slideUp(350);
+	  } 
+	  else {
+        $(this).parent().parent().find("li .inner").removeClass("show");
+        $(this).parent().parent().find("li .inner").slideUp(350);
+        $(this).next().toggleClass("show");
+        $(this).next().slideToggle(350);
+	  }
+  });
   
 	// Event listeners
 	$menuButton.click(openMenu);

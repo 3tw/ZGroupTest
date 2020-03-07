@@ -5,7 +5,7 @@
 	flex-direction: row
 	justify-items: space-between
 	padding: 0 1rem 0 1rem
-	
+
 .logo-container
 	flex: 1 1 auto
 .hamburger-container
@@ -16,7 +16,7 @@
 	height: 100%
 	> img
 		height: 100%
-		
+
 #hamburger
 	text-align: right
 	padding: 0.9rem 1rem 0.9rem 0
@@ -32,11 +32,58 @@
 	padding: 0 2rem 0 2rem
 	z-index: 9999
 	background-color: $white
-	
+
 .menu-content,
 .contact-info
 	opacity: 0
-	
+
 ul
 	list-style: none
 	padding: 0
+
+// Menu levels
+.menu-content a
+	font-size: 1.25rem
+	line-height: 1.5rem
+	text-decoration: none
+	color: $text-color
+	text-transform: uppercase
+.level-2 a
+	font-size: 1rem
+	line-height: 1.19rem
+	text-transform: capitalize
+	
+.menu-content > li
+	padding-top: 1.5rem
+.level-1 > li
+	padding-top: 0.8rem
+.level-2 > li
+	padding-top: 0.4rem
+	
+.level-1
+	overflow: hidden
+	display: none
+	margin: 1rem
+	border-top: 1px solid $light-gray
+	border-bottom: 1px solid $light-gray
+	&.show
+		/*display: block;*/
+		
+.level-2
+	overflow: hidden
+	display: none
+	margin: 1rem
+	&.show
+		/*display: block;*/
+		
+.level-1:last-child
+	padding-bottom: 0.8rem
+.level-2:last-child
+	padding-bottom: 0.4rem
+	
+a.toggle
+	display: block
+	transition: 0.3s ease
+
+	&:hover
+		color: $dark-gray
