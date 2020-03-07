@@ -344,6 +344,10 @@ a.toggle:hover {
   background-color: #002A00;
 }
 
+.active-menu.toggle {
+  color: #707070;
+}
+
 .icon-container > p {
   display: inline-block;
   padding-left: 1rem;
