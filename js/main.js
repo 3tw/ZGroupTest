@@ -18,19 +18,23 @@ $(document).ready(function () {
 	// expand items
 	$(".toggle").click(function(e) {
 		e.preventDefault();
-
+		
 		if ($(this).next().hasClass("show")) {
-			$(this).next().removeClass("show");
 			$(this).removeClass("active-menu");
+			$(this).next().removeClass("show");
 			$(this).next().slideUp(350);
+			if($(this).next().hasClass("level-2")) {
+				$(this).parent().parent().prev().addClass("active-menu")
+			}
 		} 
 		else if (!$(this).hasClass("final-link")) {
-			$(this).parent().parent().find("li .inner").removeClass("show");
-			$(this).parent().parent().find("li .inner").slideUp(350);
 			$(this).parents().find("li .toggle").removeClass("active-menu");
 			$(this).addClass("active-menu");	
+			$(this).parent().parent().find("li .inner").removeClass("show");
+			$(this).parent().parent().find("li .inner").slideUp(350);
 			$(this).next().toggleClass("show");
 			$(this).next().slideToggle(350);
+			
 		}
   });
   
