@@ -1,56 +1,28 @@
 $(document).ready(function () { 
-    const $menuButton = $("#menu-button");
-    const $closeButton = $("#close-button");
-    const smallScreen = window.matchMedia("(max-width: 700px)");
-
-    // refresh on top
-    $(this).scrollTop(0);
-
-    //media queries
-    if (matchMedia){
-        smallScreen.addListener(shiftHeadline);
-        shiftHeadline(smallScreen);
-    };
-
-    // manage headlines
-    function shiftHeadline(smallScreen) {
-        const $smallHeadline = $(".small-headline");
-        const $bigHeadline = $(".big-headline");
-        if (smallScreen.matches) {
-            $smallHeadline.addClass("active");
-            $bigHeadline.removeClass("active");
-        }
-        else {
-            $smallHeadline.removeClass("active");
-            $bigHeadline.addClass("active");
-    }
-    };
-
-    // button listeners
-    $menuButton.click(openMenu);
-    $closeButton.click(closeMenu);
+    const $menuButton = $("#menu-icon");
 
     // open & close menu
     function openMenu() {
-        $("#menu").width("100%");
+		$("#menu").slideDown(500);
+		$(".menu-content").animate({opacity:1}, 600);
+		$(".contact-info").animate({opacity:1}, 600);
     };
     function closeMenu() {
-        $("#menu").width("0");
+		$(".menu-content").animate({opacity: 0}, 300);
+		$(".contact-info").animate({opacity: 0}, 300);
+		$("#menu").slideUp(500)
+
+
     };
-
-    // expand items
-    $(".toggle").click(function(e) {
-        e.preventDefault();
-
-      if ($(this).next().hasClass("show")) {
-          $(this).next().removeClass("show");
-          $(this).next().slideUp(350);
-      } else {
-        $(this).parent().parent().find("li .inner").removeClass("show");
-        $(this).parent().parent().find("li .inner").slideUp(350);
-        $(this).next().toggleClass("show");
-        $(this).next().slideToggle(350);
-      }
-  });
-
+  
+	// Event listeners
+	$menuButton.click(openMenu);
+	$menuButton.click(function(){
+		if ($(this).hasClass("open"))
+			closeMenu()
+	}) ;
+  
+	$menuButton.click(function(){
+		$(this).toggleClass('open');
+	});
 });

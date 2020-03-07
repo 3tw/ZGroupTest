@@ -13,65 +13,73 @@
 		<div id="navbar">
 			<!--Logo and hamburger icon-->
 			<div class="logo-container">
-
+				<a href="javascript:void(0);" id="logo">
+					<img src="./assets/svg/DAT-IT_primarni_RGB.svg" alt="Logo">
+				</a>
 			</div>
-			<div class="menu-container">
-
+			<div class="hamburger-container">
+				<a href="javascript:void(0);" id="hamburger">
+					<!-- <img src="./assets/svg/hamburger-menu.svg" alt="Hamburger menu"> -->
+					<div id="menu-icon">
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+				</a>
 			</div>
 			<!--Menu content-->
 			<div id="menu">
-				<a class="close-button">&times;</a>
+				<!-- <a id="exit-button">&times;</a> -->
 
-				<ul class="menu-content">
+				<ul class="menu-content menu-grid">
 					<li><a href="javascript:void(0);" class="menu-button">STORITVE IN REŠITVE</a></li>
 					<li><a href="javascript:void(0);" class="menu-button">INDRUSTRIJA</a></li>
 					<li><a href="javascript:void(0);" class="menu-button">PODROČJA</a></li>
 					<li><a href="javascript:void(0);" class="menu-button">O NAS</a></li>
 				</ul>
-			</div>
-			<!--Icons-->
-			<div class="contact-info">
-				<ul class="info-icons">
-					<li>
-						<a href="javascript:void(0);" class="email-icon">
-							<svg></svg>
-						</a>
-					</li>
-					<li>
-						<a href="javascript:void(0);" class="phone-icon">
-							<svg></svg>
-						</a>
-					</li>
-					<li>
-						<a href="javascript:void(0);" class="location-icon">
-							<svg></svg>
-						</a>
-					</li>
-					<li>
-						<a href="javascript:void(0);" class="search-icon">
-							<svg></svg>
-						</a>
-					</li>
-				</ul>
+
+				<!--Icons-->
+				<div class="contact-info">
+					<ul class="info-icons">
+						<li>
+							<a href="javascript:void(0);" class="email-icon">
+								<svg></svg>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);" class="phone-icon">
+								<svg></svg>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);" class="location-icon">
+								<svg></svg>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);" class="search-icon">
+								<svg></svg>
+							</a>
+						</li>
+					</ul>
+				</div>
 			</div>
 		</div>
 	</header>
 	<!--Main content-->
 	<div id="content-grid">
+		<!--Main image-->
 		<section id="main-image" class="image-wrap">
 			<div class="image-container image-grid">
-				<img src="../assets/images/main-m.jpg" 
-				srcset="../assets/images/main-m.jpg 680w,
-					../assets/images/main-d.jpg 760w" 
-					sizes="100vw" alt="Main image">
+				<img src="../assets/images/main-m.jpg" srcset="../assets/images/main-m.jpg 680w,
+					../assets/images/main-d.jpg 760w" sizes="100vw" alt="Main image">
 			</div>
 		</section>
-
+		<!--First section-->
 		<section id="main-section" class="content-wrap">
 			<h2>HIBRIDNI IT / OMREŽJE WIFI KOT STORITEV</h2>
-			<h1>LJUBLJANSKI DVOR
-				<br>OMREŽJE LAHKO SE
-				<br>TUKAJ
+			<h1>LJUBLJANSKI DVOR OMREŽJE
 			</h1>
 			<p>
 				Upravljanje in načrtovanje omrežij od žičnih do WIFI, pri čemer poskrbimo za celoten cikel upravljanja.
@@ -80,19 +88,52 @@
 				Preberi več
 			</button>
 		</section>
-
-		<section class="info-container content-wrap">
+		<!--Box #1-->
+		<section class="info-container content-wrap" id="info-1">
 			<div class="box">
-				<span class=box-text>
+				<div class=box-text>
 					<h3>LJUBLJANSKI DVOR</h3>
 					<p>
 						Upravljanje in načrtovanje omrežij od žičnih do WIFI, pri čemer poskrbimo za celoten cikel
 						upravljanja.
 					</p>
-				</span>
-				<button class="read-more white gotham-medium">
-					Preberi več
-				</button>
+					<button class="read-more white Gotham-Light">
+						Preberi več
+					</button>
+				</div>
+			</div>
+		</section>
+		<!--Box #2-->
+		<section class="info-container content-wrap" id="info-2">
+			<div class="box">
+				<div class=box-text>
+					<h3>LJUBLJANSKI DVOR</h3>
+					<p>
+						Upravljanje in načrtovanje omrežij od žičnih do WIFI, pri čemer poskrbimo za celotni cikel
+						upravljanja. Upravljanje in načrtovanje omrežij od žičnih do WIFI, pri čemer poskrbimo za
+						celotni ...
+					</p>
+
+					<button class="read-more white Gotham-Light">
+						Preberi več
+					</button>
+				</div>
+			</div>
+		</section>
+		<!--Box #3-->
+		<section class="info-container content-wrap" id="info-3">
+			<div class="box">
+				<div class=box-text>
+					<h3>LJUBLJANSKI DVOR</h3>
+					<p>
+						Upravljanje in načrtovanje omrežij od žičnih do WIFI, pri čemer poskrbimo za celotni cikel
+						upravljanja.
+					</p>
+
+					<button class="read-more white Gotham-Light">
+						Preberi več
+					</button>
+				</div>
 			</div>
 		</section>
 	</div>

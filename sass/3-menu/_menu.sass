@@ -1,0 +1,42 @@
+// Navigation bar
+#navbar
+	height: 4.4rem
+	display: flex
+	flex-direction: row
+	justify-items: space-between
+	padding: 0 1rem 0 1rem
+	
+.logo-container
+	flex: 1 1 auto
+.hamburger-container
+	flex: 1 1 auto
+#logo,
+#hamburger
+	display: block
+	height: 100%
+	> img
+		height: 100%
+		
+#hamburger
+	text-align: right
+	padding: 0.9rem 1rem 0.9rem 0
+
+// Dropdown menu
+#menu
+	display: none
+	position: absolute
+	height: 100%
+	width: 100%
+	top: 4.4rem // #navbar height
+	left: 0
+	padding: 0 2rem 0 2rem
+	z-index: 9999
+	background-color: $white
+	
+.menu-content,
+.contact-info
+	opacity: 0
+	
+ul
+	list-style: none
+	padding: 0
