@@ -3,16 +3,16 @@ $(document).ready(function () {
 
     // open & close menu
     function openMenu() {
-		$("#menu").slideDown(500);
-		$(".menu-content").animate({opacity:1}, 600);
-		$(".contact-info").animate({opacity:1}, 600);
+		$("#menu").slideDown(400, function () {
+			$(this).css("display", "flex")
+		  });
+		$(".menu-content").animate({opacity:1}, 300);
+		$(".info-icons").animate({opacity:1}, 300);
     };
     function closeMenu() {
 		$(".menu-content").animate({opacity: 0}, 300);
-		$(".contact-info").animate({opacity: 0}, 300);
-		$("#menu").slideUp(500)
-
-
+		$(".info-icons").animate({opacity: 0}, 300);
+		$("#menu").slideUp(400)
 	};
 	
 	// expand items
