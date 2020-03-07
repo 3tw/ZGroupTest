@@ -1,2 +1,53 @@
 @media screen and (min-width: 720px)
+	#navbar
+		padding:0 1rem 0 3rem
+			
+	#content-grid
+		display: grid 
+		grid-template-columns: 3rem 1fr repeat(8, 0.25fr) 3rem
+		grid-template-rows: 6rem 12rem 12rem 3rem repeat(2, 3rem) 10rem
+		
+	.image-wrap
+		grid-column: 1/7
+		grid-row: 1/6
+	.image-container,
+	.image-container > img
+		height: 100%
+		
+	.main-wrap
+		grid-column: 4/11
+		grid-row: 2/4
+	#main-section
+		padding: 1rem
+		
+	#info-1
+		grid-column: 3/6
+		grid-row: 5/7
+	#info-2
+		display: inline-block
+		grid-column: 6/9
+		grid-row: 5/7
+	#info-3
+		display: inline-block
+		grid-column: 9/12
+		grid-row: 5/7
+		.box
+			margin: 0 0 0 0.4rem 
+			padding: 1rem 1.4rem 1rem 1rem
+	.box
+		margin: 0 0.4rem 0 0.4rem	
+		
+	#next-section
+		grid-column: 1/12
+		grid-row: 6/8
+		
+@media screen and (min-width: 800px)
+	#content-grid
+		grid-template-columns: 4rem 1fr repeat(8, 0.25fr) 4rem
+		grid-template-rows: 8rem 10rem 10rem 4rem repeat(2, 4rem) 10rem
+				
+@media screen and (min-width: 1024px)
+	#content-grid
+		grid-template-columns: 4.4rem 1fr repeat(8, 0.25fr) 4.4rem
+		grid-template-rows: 10rem 9rem 9rem 6rem repeat(2, 6rem) 10rem
 

@@ -3,7 +3,7 @@ $(document).ready(function () {
 
     // open & close menu
     function openMenu() {
-		$("#menu").slideDown(350, function () {
+		$("#menu").slideDown(400, function () {
 			$(this).css("display", "flex")
 		  });
 		$(".menu-content").animate({opacity:1}, 300);
@@ -12,7 +12,7 @@ $(document).ready(function () {
     function closeMenu() {
 		$(".menu-content").animate({opacity: 0}, 300);
 		$(".info-icons").animate({opacity: 0}, 300);
-		$("#menu").slideUp(300)
+		$("#menu").slideUp(400);
 	};
 	
 	// expand items
@@ -24,7 +24,7 @@ $(document).ready(function () {
 			$(this).next().removeClass("show");
 			$(this).next().slideUp(350);
 			if($(this).next().hasClass("level-2")) {
-				$(this).parent().parent().prev().addClass("active-menu")
+				$(this).parent().parent().prev().addClass("active-menu");
 			}
 		} 
 		else if (!$(this).hasClass("final-link")) {
