@@ -21,16 +21,16 @@ $(document).ready(function () {
 
 		if ($(this).next().hasClass("show")) {
 			$(this).next().removeClass("show");
-			$(this).next().slideUp(350);
 			$(this).removeClass("active-menu");
+			$(this).next().slideUp(350);
 		} 
-		else {
+		else if (!$(this).hasClass("final-link")) {
 			$(this).parent().parent().find("li .inner").removeClass("show");
 			$(this).parent().parent().find("li .inner").slideUp(350);
-			$(this).next().toggleClass("show");
-			$(this).next().slideToggle(350);
 			$(this).parents().find("li .toggle").removeClass("active-menu");
 			$(this).addClass("active-menu");	
+			$(this).next().toggleClass("show");
+			$(this).next().slideToggle(350);
 		}
   });
   
