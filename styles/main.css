@@ -219,19 +219,18 @@ h1, h2, h3 {
 }
 
 #navbar {
-  height: 4.4rem;
-  display: flex;
-  flex-direction: row;
-  justify-items: space-between;
+  display: grid;
+  grid-template-columns: 0.4fr 3fr 0.4fr;
+  grid-template-rows: 4.4rem;
   padding: 0 1rem 0 1rem;
 }
 
 .logo-container {
-  flex: 1 1 auto;
+  grid-column: 1/2;
 }
 
 .hamburger-container {
-  flex: 1 1 auto;
+  grid-column: 3/4;
 }
 
 #hamburger {
@@ -264,6 +263,7 @@ h1, h2, h3 {
 
 .menu-content,
 .info-icons {
+  display: none;
   opacity: 0;
 }
 
@@ -363,6 +363,22 @@ a.toggle:hover {
     display: grid;
     grid-template-columns: 0.25fr 1fr repeat(9, 0.25fr);
     grid-template-rows: 6rem 12rem 12rem 3rem repeat(2, 3rem) 8rem;
+  }
+
+  #menu {
+    grid-column: 2/3;
+    grid-row: 1;
+    display: inline-block;
+    position: relative;
+    padding: 0;
+    top: 0;
+    width: auto;
+  }
+
+  .menu-content {
+    display: flex;
+    flex-direction: row;
+    opacity: 1;
   }
 
   .image-wrap {
