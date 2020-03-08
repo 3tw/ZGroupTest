@@ -219,6 +219,52 @@ h1, h2, h3 {
   left: 50%;
 }
 
+#desktop-menu-icon {
+  width: 30px;
+  height: 45px;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  cursor: pointer;
+  display: inline-block;
+}
+
+#desktop-menu-icon span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: #ffffff;
+  color: #ffffff;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+
+#desktop-menu-icon span:nth-child(1) {
+  top: 20px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+#desktop-menu-icon span:nth-child(2) {
+  top: 20px;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
 #navbar {
   display: grid;
   grid-template-columns: 4rem auto 4rem;
@@ -235,6 +281,12 @@ h1, h2, h3 {
 }
 
 #hamburger {
+  text-align: right;
+  padding: 0.9rem 1rem 0.9rem 0;
+}
+
+#desktop-x {
+  display: none;
   text-align: right;
   padding: 0.9rem 1rem 0.9rem 0;
 }
@@ -328,6 +380,10 @@ a.toggle {
 }
 a.toggle:hover {
   color: #707070;
+}
+
+#desktop-menu {
+  display: none;
 }
 
 .active-menu::before {
@@ -427,7 +483,7 @@ a.toggle:hover {
   #menu {
     grid-column: 2/3;
     grid-row: 1;
-    display: inline-block;
+    display: inline-block !important;
     position: relative;
     padding: 0;
     top: 0;
@@ -435,9 +491,9 @@ a.toggle:hover {
   }
 
   .menu-content {
-    display: flex;
+    display: flex !important;
     flex-direction: row;
-    opacity: 1;
+    opacity: 1 !important;
     margin: 0;
     height: 4.4rem;
     align-items: center;
@@ -447,8 +503,24 @@ a.toggle:hover {
     padding: 0 1rem 0 0;
   }
 
+  #hamburger {
+    display: none;
+  }
+
+  #desktop-menu-icon {
+    background-color: #002A00;
+  }
+
+  #desktop-menu {
+    display: inline-grid;
+  }
+
+  .toggle.mobile-menu {
+    display: none;
+  }
+
   .level-1 {
-    display: block;
+    display: none;
     position: absolute;
     border-top: 0;
     border-bottom: 0;
@@ -521,7 +593,7 @@ a.toggle:hover {
   .desktop-icons {
     padding: 1rem 0 1rem 0;
     display: grid;
-    grid-template-columns: 6rem 1fr 1fr;
+    grid-template-columns: 6rem 15rem 15rem;
     grid-template-rows: 1fr 1fr;
     border-bottom: 1px solid #828282;
     opacity: 1;
@@ -536,6 +608,14 @@ a.toggle:hover {
   }
   .desktop-icons li.logo-container > a#logo {
     height: 64px;
+  }
+
+  .sidebar li .icon-container {
+    justify-content: center;
+  }
+
+  .mobile-icons {
+    display: none !important;
   }
 
   .sidebar {

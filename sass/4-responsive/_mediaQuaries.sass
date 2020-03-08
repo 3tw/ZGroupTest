@@ -50,26 +50,36 @@
 	#menu
 		grid-column: 2/3
 		grid-row: 1
-		display: inline-block
+		display: inline-block !important
 		position: relative
 		padding: 0
 		top: 0
 		width: auto
 		
 	.menu-content 
-		display: flex
+		display: flex !important
 		flex-direction: row
-		opacity: 1
+		opacity: 1 !important
 		margin: 0
 		height: 4.4rem
 		align-items: center
 		justify-content: flex-end
 		> li
 			padding: 0 1rem 0 0
+			
+	#hamburger
+		display: none
+	#desktop-menu-icon
+		background-color: $text-color
+		
+	#desktop-menu
+		display: inline-grid
+	.toggle.mobile-menu
+		display: none
 	
 	// Menu levels		
 	.level-1
-		display: block
+		display: none
 		position: absolute
 		border-top: 0
 		border-bottom: 0
@@ -126,7 +136,7 @@
 	.desktop-icons
 		padding: 1rem 0 1rem 0
 		display: grid
-		grid-template-columns: 6rem 1fr 1fr
+		grid-template-columns: 6rem 15rem 15rem
 		grid-template-rows: 1fr 1fr
 		border-bottom: 1px solid $light-gray	
 		opacity: 1
@@ -138,8 +148,13 @@
 			align-self: center
 			> a#logo
 				height: 64px
+				
+	.sidebar li .icon-container
+		justify-content: center
+				
+	.mobile-icons
+		display: none !important
 			
-		
 	// Sidebar
 	.sidebar
 		display: inline-block
