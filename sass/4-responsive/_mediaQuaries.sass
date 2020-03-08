@@ -7,21 +7,6 @@
 		grid-template-columns: 0.25fr 1fr repeat(9, 0.25fr)
 		grid-template-rows: 6rem 12rem 12rem 3rem repeat(2, 3rem) 8rem
 		
-	// Menu
-	#menu
-		grid-column: 2/3
-		grid-row: 1
-		display: inline-block
-		position: relative
-		padding: 0
-		top: 0
-		width: auto
-		
-	.menu-content 
-		display: flex
-		flex-direction: row
-		opacity: 1
-		
 	// Main content	
 	.image-wrap
 		grid-column: 1/7
@@ -60,8 +45,100 @@
 @media screen and (min-width: 800px)
 	#content-grid
 		grid-template-rows: 8rem 10rem 10rem 4rem repeat(2, 4rem) 8rem
+		
+	// Menu
+	#menu
+		grid-column: 2/3
+		grid-row: 1
+		display: inline-block
+		position: relative
+		padding: 0
+		top: 0
+		width: auto
+		
+	.menu-content 
+		display: flex
+		flex-direction: row
+		opacity: 1
+		margin: 0
+		height: 4.4rem
+		align-items: center
+		justify-content: flex-end
+		> li
+			padding: 0 1rem 0 0
+	
+	// Menu levels		
+	.level-1
+		display: block
+		position: absolute
+		border-top: 0
+		border-bottom: 0
+		margin: 0
+		padding: 1rem 3rem 1rem 3rem
+		top: 4.4rem 
+		right: 0
+		left: 8rem
+		background-color: $white
+		> li
+			padding: 1rem 0 1rem 0
+			display: grid
+			grid-template-columns: 1fr 1fr 1fr
+			grid-template-rows: repeat(7, min-content)
+			border-bottom: 1px solid $light-gray
+			
+	.level-1 > li > a
+		grid-column: 1/2
+	.level-2
+		display: inline-block
+		grid-column: 2/4
+		margin: 0
+		padding: 0
+	.level-2 > li.top-level-2
+		padding-top: 1rem
+		
+	// Menu level with grid
+	.menu-tab-3 .level-2
+		display: grid
+		grid-template-columns: 1fr 1fr
+		grid-template-rows: repeat(5, min-content)
+	.top-level-1
+		grid-column: 1/2
+		grid-row: 1/2
+	.top-level-2
+		grid-column: 1/2
+		grid-row: 3/4
+		border-top: 1px solid $light-gray
+	.bottom-level
+		grid-column: 2/3
+		&:nth-child(3)
+			padding-bottom: 1rem
+		&:nth-child(4)
+			border-top: 1px solid $light-gray
+			padding-top: 1rem
+
+	// Menu level indicator	
+	.active-menu::before
+		content: none
+	.active-menu.toggle
+		color: $text-color
+		
+	// Sidebar
+	.sidebar
+		display: inline-block
+		grid-column: 11/12
+		grid-row: 1/3
+		padding-right: 1rem
+		text-align: center
+		> li
+			padding-top: 1.5rem
 				
 @media screen and (min-width: 1024px)
 	#content-grid
 		grid-template-rows: 10rem 9rem 9rem 6rem repeat(2, 6rem) 8rem
+		
+	.menu-content > li
+		padding: 0 2rem 0 0
 
+@media screen and (min-width: 1280px)
+	.menu-content > li
+		padding: 0 4.2rem 0 0

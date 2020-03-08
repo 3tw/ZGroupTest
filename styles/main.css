@@ -16,6 +16,7 @@
 
 html {
   height: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -220,7 +221,7 @@ h1, h2, h3 {
 
 #navbar {
   display: grid;
-  grid-template-columns: 0.4fr 3fr 0.4fr;
+  grid-template-columns: 4rem auto 4rem;
   grid-template-rows: 4.4rem;
   padding: 0 1rem 0 1rem;
 }
@@ -304,6 +305,7 @@ ul {
   margin: 1rem;
   border-top: 1px solid #828282;
   border-bottom: 1px solid #828282;
+  padding-bottom: 0.8rem;
 }
 .level-1.show {
   /*display: block;*/
@@ -313,17 +315,10 @@ ul {
   overflow: hidden;
   display: none;
   margin: 1rem;
+  padding-bottom: 0.4rem;
 }
 .level-2.show {
   /*display: block;*/
-}
-
-.level-1:last-child {
-  padding-bottom: 0.8rem;
-}
-
-.level-2:last-child {
-  padding-bottom: 0.4rem;
 }
 
 a.toggle {
@@ -354,6 +349,10 @@ a.toggle:hover {
   font-size: 0.87rem;
 }
 
+.sidebar {
+  display: none;
+}
+
 @media screen and (min-width: 720px) {
   #navbar {
     padding: 0 1rem 0 3rem;
@@ -363,22 +362,6 @@ a.toggle:hover {
     display: grid;
     grid-template-columns: 0.25fr 1fr repeat(9, 0.25fr);
     grid-template-rows: 6rem 12rem 12rem 3rem repeat(2, 3rem) 8rem;
-  }
-
-  #menu {
-    grid-column: 2/3;
-    grid-row: 1;
-    display: inline-block;
-    position: relative;
-    padding: 0;
-    top: 0;
-    width: auto;
-  }
-
-  .menu-content {
-    display: flex;
-    flex-direction: row;
-    opacity: 1;
   }
 
   .image-wrap {
@@ -434,10 +417,124 @@ a.toggle:hover {
   #content-grid {
     grid-template-rows: 8rem 10rem 10rem 4rem repeat(2, 4rem) 8rem;
   }
+
+  #menu {
+    grid-column: 2/3;
+    grid-row: 1;
+    display: inline-block;
+    position: relative;
+    padding: 0;
+    top: 0;
+    width: auto;
+  }
+
+  .menu-content {
+    display: flex;
+    flex-direction: row;
+    opacity: 1;
+    margin: 0;
+    height: 4.4rem;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .menu-content > li {
+    padding: 0 1rem 0 0;
+  }
+
+  .level-1 {
+    display: block;
+    position: absolute;
+    border-top: 0;
+    border-bottom: 0;
+    margin: 0;
+    padding: 1rem 3rem 1rem 3rem;
+    top: 4.4rem;
+    right: 0;
+    left: 8rem;
+    background-color: #ffffff;
+  }
+  .level-1 > li {
+    padding: 1rem 0 1rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(7, min-content);
+    border-bottom: 1px solid #828282;
+  }
+
+  .level-1 > li > a {
+    grid-column: 1/2;
+  }
+
+  .level-2 {
+    display: inline-block;
+    grid-column: 2/4;
+    margin: 0;
+    padding: 0;
+  }
+
+  .level-2 > li.top-level-2 {
+    padding-top: 1rem;
+  }
+
+  .menu-tab-3 .level-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(5, min-content);
+  }
+
+  .top-level-1 {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+
+  .top-level-2 {
+    grid-column: 1/2;
+    grid-row: 3/4;
+    border-top: 1px solid #828282;
+  }
+
+  .bottom-level {
+    grid-column: 2/3;
+  }
+  .bottom-level:nth-child(3) {
+    padding-bottom: 1rem;
+  }
+  .bottom-level:nth-child(4) {
+    border-top: 1px solid #828282;
+    padding-top: 1rem;
+  }
+
+  .active-menu::before {
+    content: none;
+  }
+
+  .active-menu.toggle {
+    color: #002A00;
+  }
+
+  .sidebar {
+    display: inline-block;
+    grid-column: 11/12;
+    grid-row: 1/3;
+    padding-right: 1rem;
+    text-align: center;
+  }
+  .sidebar > li {
+    padding-top: 1.5rem;
+  }
 }
 @media screen and (min-width: 1024px) {
   #content-grid {
     grid-template-rows: 10rem 9rem 9rem 6rem repeat(2, 6rem) 8rem;
+  }
+
+  .menu-content > li {
+    padding: 0 2rem 0 0;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .menu-content > li {
+    padding: 0 4.2rem 0 0;
   }
 }
 
