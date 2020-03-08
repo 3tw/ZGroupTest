@@ -31,11 +31,12 @@
 	flex-basis: calc(65vh - 4.4rem)
 	flex-grow: 1
 	flex-shrink: 3
-.info-icons
+.mobile-icons
 	flex: 3 1 auto
 	
 .menu-content,
-.info-icons
+.mobile-icons,
+.desktop-icons
 	display: none
 	opacity: 0
 
@@ -100,11 +101,14 @@ a.toggle
 	color: $dark-gray
 		
 // Info icons
+.icon-container
+	display: flex
+	align-items: center
 .icon-container > p
 	display: inline-block
 	padding-left: 1rem
 	font-size: 0.87rem
-	
+		
 // Sidebar
 .sidebar
 	display: none

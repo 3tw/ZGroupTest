@@ -258,12 +258,13 @@ h1, h2, h3 {
   flex-shrink: 3;
 }
 
-.info-icons {
+.mobile-icons {
   flex: 3 1 auto;
 }
 
 .menu-content,
-.info-icons {
+.mobile-icons,
+.desktop-icons {
   display: none;
   opacity: 0;
 }
@@ -343,6 +344,11 @@ a.toggle:hover {
   color: #707070;
 }
 
+.icon-container {
+  display: flex;
+  align-items: center;
+}
+
 .icon-container > p {
   display: inline-block;
   padding-left: 1rem;
@@ -413,7 +419,7 @@ a.toggle:hover {
     grid-row: 6/8;
   }
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 920px) {
   #content-grid {
     grid-template-rows: 8rem 10rem 10rem 4rem repeat(2, 4rem) 8rem;
   }
@@ -449,7 +455,7 @@ a.toggle:hover {
     margin: 0;
     padding: 1rem 3rem 1rem 3rem;
     top: 4.4rem;
-    right: 0;
+    right: -5rem;
     left: 8rem;
     background-color: #ffffff;
   }
@@ -457,7 +463,7 @@ a.toggle:hover {
     padding: 1rem 0 1rem 0;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: repeat(7, min-content);
+    grid-auto-rows: min-content;
     border-bottom: 1px solid #828282;
   }
 
@@ -510,6 +516,26 @@ a.toggle:hover {
 
   .active-menu.toggle {
     color: #002A00;
+  }
+
+  .desktop-icons {
+    padding: 1rem 0 1rem 0;
+    display: grid;
+    grid-template-columns: 6rem 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    border-bottom: 1px solid #828282;
+    opacity: 1;
+  }
+  .desktop-icons li {
+    align-self: center;
+  }
+  .desktop-icons li.logo-container {
+    grid-column: 1/2;
+    grid-row: 1/3;
+    align-self: center;
+  }
+  .desktop-icons li.logo-container > a#logo {
+    height: 64px;
   }
 
   .sidebar {

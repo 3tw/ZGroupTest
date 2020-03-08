@@ -4,20 +4,20 @@ $(document).ready(function () {
     // open & close menu
     function openMenu() {
 		$(".menu-content").css("display", "inline-block");
-		$(".info-icons").css("display", "inline-block");
+		$(".mobile-icons").css("display", "inline-block");
 		$("#menu").slideDown(400, function () {
 			$(this).css("display", "flex")
 		  });
 		$(".menu-content").animate({opacity:1}, 300);
-		$(".info-icons").animate({opacity:1}, 300);
+		$(".mobile-icons").animate({opacity:1}, 300);
     };
     function closeMenu() {
 		$(".menu-content").animate({opacity: 0}, 250);
-		$(".info-icons").animate({opacity: 0}, 250);
+		$(".mobile-icons").animate({opacity: 0}, 250);
 		setTimeout(function(){
 			$("#menu").slideUp(400);
 			$(".menu-content").css("display", "none");
-			$(".info-icons").css("display", "none");
+			$(".mobile-icons").css("display", "none");
 		}, 500)
 		
 	};
