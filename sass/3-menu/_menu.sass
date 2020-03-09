@@ -36,8 +36,6 @@
 	flex-basis: calc(65vh - 4.4rem)
 	flex-grow: 1
 	flex-shrink: 3
-.mobile-icons
-	flex: 3 1 auto
 	
 .menu-content,
 .mobile-icons,
@@ -111,8 +109,11 @@ a.toggle
 .icon-container
 	display: flex
 	align-items: center
+.icon-container > a
+	flex-basis: 2rem
+	text-align: center
 .icon-container > p
-	display: inline-block
+	flex: 1 1 auto
 	padding-left: 1rem
 	font-size: 0.87rem
 		
