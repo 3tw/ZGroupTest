@@ -3,6 +3,8 @@ $(document).ready(function () {
 	const $desktopMenuButton = $("#desktop-menu");
 	const $desktopXButton = $("#desktop-x");
 	const $breakPoint = window.matchMedia("(max-width: 920px)");
+	const $smallScreen = window.matchMedia("(max-width: 450px)");
+
 	
 	// Mobile: open & close menu
 	function openMenu() {
@@ -35,23 +37,32 @@ $(document).ready(function () {
 		$("#desktop-x").css("display", "none")
 	};
 	
+	// change image src
+	function shiftImage(breakPoint) {
+		if (breakPoint.matches) {
+			$(".image-container img").attr("src", "./assets/images/main-m.jpg")
+		} else {
+			$(".image-container img").attr("src", "./assets/images/main-d.jpg")
+		}
+	}
+	
 	// Event listeners
 	//Media queries
     if (matchMedia){
+		// close menus
 		$breakPoint.addListener(function() {
 			if ($menuButton.hasClass("open")) {
 				closeMenu();
-				closeMenu($breakPoint);
 				$menuButton.toggleClass("open");
 			}
-		});
-		$breakPoint.addListener(function() {
-			if ($desktopMenuButton.hasClass("open")) {
+			else if ($desktopMenuButton.hasClass("open")) {
 				closeDesktopMenu();
-				closeDesktopMenu($breakPoint);
 				$desktopMenuButton.toggleClass("open");
 			}
 		});
+		// change image
+		$smallScreen.addListener(shiftImage);
+		shiftImage($smallScreen);
     };
 	// Mobile
 	$(".toggle").click(function (e) {
