@@ -67,6 +67,10 @@ a::focus {
   outline: none;
 }
 
+a {
+  outline: 0;
+}
+
 .gotham-bold {
   font-family: "Gotham-Bold";
   font-weight: normal;
