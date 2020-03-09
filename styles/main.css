@@ -288,7 +288,7 @@ h1, h2, h3 {
 #desktop-x {
   display: none;
   text-align: right;
-  padding: 0.9rem 1rem 0.9rem 0;
+  padding: 0.9rem 2.5rem 0.9rem 0;
 }
 
 #menu {
@@ -507,16 +507,21 @@ a.toggle:hover {
     display: none;
   }
 
-  #desktop-menu-icon {
+  #desktop-x {
     background-color: #002A00;
+    width: 6rem;
   }
 
   #desktop-menu {
     display: inline-grid;
   }
 
-  .toggle.mobile-menu {
+  #mobile-menu {
     display: none;
+  }
+
+  a.toggle:hover {
+    color: #002A00;
   }
 
   .level-1 {
@@ -615,7 +620,7 @@ a.toggle:hover {
   }
 
   .mobile-icons {
-    display: none !important;
+    display: none;
   }
 
   .sidebar {

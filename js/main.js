@@ -1,90 +1,91 @@
 $(document).ready(function () {
 	const $menuButton = $("#menu-icon");
-	const $desktopMenuButton = $("#desktop-menu")
-	const $desktopXButton = $("#desktop-x")
-
+	const $desktopMenuButton = $("#desktop-menu");
+	const $desktopXButton = $("#desktop-x");
+	const $breakPoint = window.matchMedia("(max-width: 920px)");
+	
 	// Mobile: open & close menu
 	function openMenu() {
-		$(".menu-content").css("display", "block");
-		$(".mobile-icons").css("display", "block");
+		$(".menu-content").show().animate({ opacity: 1 }, 300);
+		$(".mobile-icons").show().animate({ opacity: 1 }, 300);
 		$("#menu").slideDown(350, function () {
 			$(this).css("display", "flex")
 		});
-		$(".menu-content").animate({ opacity: 1 }, 300);
-		$(".mobile-icons").animate({ opacity: 1 }, 300);
 	};
 	function closeMenu() {
 		$(".menu-content").animate({ opacity: 0 }, 250);
 		$(".mobile-icons").animate({ opacity: 0 }, 250);
 		setTimeout(function () {
 			$("#menu").slideUp(350);
-			$(".menu-content").css("display", "none");
-			$(".mobile-icons").css("display", "none");
+			$(".menu-content").hide()
+			$(".mobile-icons").hide()
+			$("#mobile-menu").parent().find("li .toggle").removeClass("active-menu");
+			$("#mobile-menu").parent().find("ul.inner").removeClass("show").slideUp(350);
 		}, 200)
-
 	};
-	function closeDesktop() {
-		if($("#desktop-menu").hasClass("open")) {
-			closeDesktopMenu();
-			$("#desktop-menu").toggleClass("open");
-		}
-	}
-
-	// Mobile: expand items
-	$(".toggle").click(function (e) {
-		e.preventDefault();
-
-		if ($(this).next().hasClass("show")) {
-			$(this).removeClass("active-menu");
-			$(this).next().removeClass("show");
-			$(this).next().slideUp(350);
-			if ($(this).next().hasClass("level-2")) {
-				$(this).parent().parent().prev().addClass("active-menu");
-			}
-		}
-		else if (!$(this).hasClass("final-link")) {
-			$(this).parents().find("li .toggle").removeClass("active-menu");
-			$(this).addClass("active-menu");
-			$(this).parent().parent().find("li .inner").removeClass("show");
-			$(this).parent().parent().find("li .inner").slideUp(350);
-			$(this).next().toggleClass("show");
-			$(this).next().slideToggle(350);
-
-		}
-	});
-
-	// Desktop
+	
+	// Desktop:  open & close menu
 	function openDesktopMenu() {
 		$(".level-1.inner").slideDown(350);
-		$("#desktop-x").css("display", "block");
-	}
+		$(".level-1.inner").find("ul.inner").slideDown(350)
+		$("#desktop-x").css("display", "inline-block")
+	};
 	function closeDesktopMenu() {
 		$(".level-1.inner").slideUp(350);
-		$("#desktop-x").css("display", "none");
-	}
-	function closeMobile() { 
-		if($("#menu-icon").hasClass("open")) {
-			closeMenu();
-			$("#menu-icon").toggleClass("open");
-		}
-	}
-
+		$("#desktop-x").css("display", "none")
+	};
+	
 	// Event listeners
+	//Media queries
+    if (matchMedia){
+		$breakPoint.addListener(function() {
+			if ($menuButton.hasClass("open")) {
+				closeMenu();
+				closeMenu($breakPoint);
+				$menuButton.toggleClass("open");
+			}
+		});
+		$breakPoint.addListener(function() {
+			if ($desktopMenuButton.hasClass("open")) {
+				closeDesktopMenu();
+				closeDesktopMenu($breakPoint);
+				$desktopMenuButton.toggleClass("open");
+			}
+		});
+    };
 	// Mobile
+	$(".toggle").click(function (e) {
+		e.preventDefault();
+		if ($breakPoint.matches) {
+			if ($(this).next().hasClass("show")) {
+				$(this).next().removeClass("show").slideUp(350);
+				$(this).removeClass("active-menu");
+				if ($(this).next().hasClass("level-2")) {
+					$(this).parent().parent().prev().addClass("active-menu");
+				}
+			}
+			else if (!$(this).hasClass("final-link")) {
+				$(this).parents().find("li .toggle").removeClass("active-menu");
+				$(this).parent().parent().find("ul.inner").removeClass("show").slideUp(350);
+				$(this).next().toggleClass("show").slideToggle(350);
+				$(this).addClass("active-menu");
+			}
+		}
+	});
+	
 	$menuButton.click(function () {
 		if ($(this).hasClass("open")) {
 			closeMenu();
-			closeDesktop();
 		} else {
 			openMenu();
 		}
 		$(this).toggleClass("open");
 	});
+	
 	//Desktop
 	$desktopMenuButton.click(function() {
 		if ($(this).hasClass("open")) {
 			closeDesktopMenu();
-			closeMobile()
 		} else {
 			openDesktopMenu();
 		}
@@ -92,7 +93,7 @@ $(document).ready(function () {
 	});
 	$desktopXButton.click(function() {
 		closeDesktopMenu();
-		closeMobile()
+		$("#desktop-menu").toggleClass("open");
 	})
 	
 });
