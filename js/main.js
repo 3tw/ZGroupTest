@@ -4,7 +4,6 @@ $(document).ready(function () {
 	const $desktopXButton = $("#desktop-x");
 	const $breakPoint = window.matchMedia("(max-width: 920px)");
 	const $smallScreen = window.matchMedia("(max-width: 450px)");
-
 	
 	// Mobile: open & close menu
 	function openMenu() {
@@ -38,32 +37,24 @@ $(document).ready(function () {
 	};
 	
 	// change image src
-	function shiftImage(breakPoint) {
-		if (breakPoint.matches) {
+	function shiftImage(smallScreen) {
+		if (smallScreen.matches) {
 			$(".image-container img").attr("src", "./assets/images/main-m.jpg")
 		} else {
 			$(".image-container img").attr("src", "./assets/images/main-d.jpg")
 		}
 	};
 	
+	// remove style from HTML element
+	function removeHtmlStyle(breakPoint) {
+		// if (!breakPoint.matches) {
+		// 	$("#menu, .menu-content, .mobile-icons, .level-1.inner").removeAttr("style");
+		// }
+		$("#menu, .menu-content, .mobile-icons, .level-1.inner, #desktop-x").removeAttr("style");
+
+	}
+	
 	// Event listeners
-	// Media queries
-    if (matchMedia){
-		// close menus
-		$breakPoint.addListener(function() {
-			if ($menuButton.hasClass("open")) {
-				closeMenu();
-				$menuButton.toggleClass("open");
-			}
-			else if ($desktopMenuButton.hasClass("open")) {
-				closeDesktopMenu();
-				$desktopMenuButton.toggleClass("open");
-			}
-		});
-		// change image
-		$smallScreen.addListener(shiftImage);
-		shiftImage($smallScreen);
-    };
 	// Mobile
 	$(".toggle").click(function (e) {
 		e.preventDefault();
@@ -106,4 +97,26 @@ $(document).ready(function () {
 		closeDesktopMenu();
 		$("#desktop-menu").toggleClass("open");
 	})
+	// Media queries
+    if (matchMedia){
+		// close menus
+		$breakPoint.addListener(function() {
+			if ($menuButton.hasClass("open")) {
+				console.log(2)
+				$("#mobile-menu").parent().find(".toggle").removeClass("active-menu");
+				$("#mobile-menu").parent().find("ul.inner").removeClass("show");
+				$menuButton.toggleClass("open");
+			}
+			else if ($desktopMenuButton.hasClass("open")) {
+				$desktopMenuButton.toggleClass("open");
+			}
+			
+		});
+		// remove menu styles
+		$breakPoint.addListener(removeHtmlStyle);
+		removeHtmlStyle($breakPoint);
+		// change image
+		$smallScreen.addListener(shiftImage);
+		shiftImage($smallScreen);
+    };
 });
